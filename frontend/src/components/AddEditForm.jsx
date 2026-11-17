@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_URL = "http://localhost:5000/api/v1/posts";
+const API_URL = "https://mern-crud-app-0p35.onrender.com/api/v1/posts";
 
 function AddEditForm() {
   const { id } = useParams();
@@ -55,7 +55,12 @@ function AddEditForm() {
         throw new Error(result.message || "Failed to save post");
       }
 
-      alert(id ? "Post updated successfully!" : "Post created successfully!");
+      alert(
+        id
+          ? "Post updated successfully!"
+          : "Post created successfully!"
+      );
+
       navigate("/");
     } catch (error) {
       console.error("Error saving post:", error);
